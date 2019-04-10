@@ -1,7 +1,8 @@
 <template>
   <div class="hello-github">
     <h1>Response from github</h1>
-    <div>{{ viewer.login }}</div>
+    <div v-if="$apollo.loading">Loading...</div>
+    <div v-if="viewer">{{ viewer.login }}</div>
   </div>
 </template>
 
