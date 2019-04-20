@@ -2,6 +2,7 @@ import Vue from "vue";
 import App from "./App.vue";
 import Home from "./components/Home.vue";
 import HelloWorld from "./components/HelloWorld.vue";
+import WanderPage from "./components/WanderPage.vue";
 import VueApollo from "vue-apollo";
 import VueRouter from "vue-router";
 import { apolloClient } from "./setupApollo";
@@ -14,7 +15,8 @@ const apolloProvider = new VueApollo({
 Vue.use(VueRouter);
 const routes = [
   { path: "/", component: Home },
-  { path: "/hello", component: HelloWorld }
+  { path: "/hello", component: HelloWorld },
+  { path: "*", component: WanderPage }
 ];
 const router = new VueRouter({ routes });
 
