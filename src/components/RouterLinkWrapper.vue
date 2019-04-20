@@ -1,5 +1,5 @@
 <template>
-  <div class="router-link-wrapper">
+  <div class="router-link-wrapper" v-on:click="onClick">
     <slot></slot>
   </div>
 </template>
@@ -7,7 +7,12 @@
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
 @Component({})
-export default class RouterLinkWrapper extends Vue {}
+export default class RouterLinkWrapper extends Vue {
+  onClick(event: MouseEvent) {
+    const [link] = this.$slots.default || [null];
+    link && link.elm && (link.elm !== event.srcElement) && link.elm.dispatchEvent(new MouseEvent('click'));
+  }
+}
 </script>
 
 <style>
@@ -19,6 +24,7 @@ export default class RouterLinkWrapper extends Vue {}
   background-color: #39495C;
   font-weight: 500;
   font-size: 20px;
+  cursor: pointer;
 }
 a {
   text-decoration: unset;
