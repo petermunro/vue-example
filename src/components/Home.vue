@@ -35,6 +35,7 @@ export default class Home extends Vue {}
   flex: 0 1 200px;
   display: flex;
   flex-direction: column;
+  background-color: cadetblue;
 }
 .home > .middle {
   flex: 1 1 auto;
