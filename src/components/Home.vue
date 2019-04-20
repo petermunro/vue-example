@@ -1,7 +1,9 @@
 <template>
   <div class="home">
     <div class="side">
-      <router-link to="/hello">Hello</router-link>
+      <router-link-wrapper>
+        <router-link to="/hello">Hello</router-link>
+      </router-link-wrapper>
     </div>
     <div class="middle">
       <img alt="Vue logo" src="../assets/logo.png">
@@ -14,10 +16,12 @@
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
 import HelloGithub from "./HelloGithub.vue";
+import RouterLinkWrapper from "./RouterLinkWrapper.vue";
 
 @Component({
   components: {
-    HelloGithub
+    HelloGithub,
+    RouterLinkWrapper
   }
 })
 export default class Home extends Vue {}
