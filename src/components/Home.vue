@@ -2,7 +2,7 @@
   <div class="home">
     <div class="side">
       <router-link-wrapper>
-        <router-link to="/hello">Hello</router-link>
+        <router-link to="/gists">Gists</router-link>
       </router-link-wrapper>
     </div>
     <div class="middle">
